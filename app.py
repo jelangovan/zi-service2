@@ -9,7 +9,7 @@ def base_url():
     """Base url to test API."""
 
     response = {
-        'response': 'Hello from internal server !!!'
+        'response': 'Hello from service2 !!!'
     }
 
     #return jsonify(response)
