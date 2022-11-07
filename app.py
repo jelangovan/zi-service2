@@ -13,7 +13,7 @@ def base_url():
     }
 
     #return jsonify(response)
-    return '<h2>Hello world! from <h1>Internal server</h1> !!! </h2>'
+    return '<h2>Hello world! from <h1>Service2</h1> !!! </h2>'
 
 
 
