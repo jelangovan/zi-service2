@@ -44,3 +44,5 @@ jobs:
           docker push 820774903764.dkr.ecr.eu-west-1.amazonaws.com/zoominfo-service2:latest
           #docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           #echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+          sleep 5
+          for taskarn in $(aws ecs list-tasks --cluster zoominfo-ecs-fargate --service zoominfo-service2 --desired-status RUNNING --output text --query 'taskArns'); do aws ecs stop-task --cluster zoominfo-ecs-fargate --task $taskarn; done;
